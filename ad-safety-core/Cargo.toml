@@ -2,5 +2,8 @@
 name = "ad-safety-core"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Static safety auditor (rustc_private MIR pass) for Rust's experimental #[autodiff] feature"
+repository = "https://github.com/sangmorg1-debug/ad-safety"
 
 [dependencies]

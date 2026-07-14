@@ -2,6 +2,9 @@
 name = "cargo-ad-safety"
 version = "0.1.0"
 edition = "2021"
+license = "MIT OR Apache-2.0"
+description = "Cargo subcommand wrapper for the ad-safety autodiff compiler auditor"
+repository = "https://github.com/sangmorg1-debug/ad-safety"
 
 [dependencies]
 ad-safety-core = { path = "../ad-safety-core" }
