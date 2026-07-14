@@ -12,7 +12,10 @@ rustc 1.99.0-nightly (daf2e5e18 2026-07-13)
 
 using `rustup component add rustc-dev llvm-tools-preview enzyme` on that same nightly. Both `std::autodiff` itself and the `rustc_private` compiler internals `ad-safety` depends on are pre-stabilization and actively changing — expect this tool to require maintenance (and possibly API updates) to track new nightlies, the same tradeoff tools like Miri and Clippy live with. If you pin a different nightly, check `ad-safety-core/src/lib.rs` against your toolchain's `rustc_hir`/`rustc_middle` APIs before assuming it still builds.
 
-The two failure modes this tool catches (see below) are also filed as upstream bug reports against `rust-lang/rust`'s autodiff work — if/when those land fixes, the corresponding rule here becomes unnecessary and should be removed rather than kept as dead weight.
+The two failure modes this tool catches (see below) are also filed as upstream bug reports against `rust-lang/rust`'s autodiff work — if/when those land fixes, the corresponding rule here becomes unnecessary and should be removed rather than kept as dead weight:
+
+* Rule 1 (ICE on `Active` reference/pointer parameters) → [rust-lang/rust#159267](https://github.com/rust-lang/rust/issues/159267)
+* Rule 2 (silent `dx: 0` on coroutines/generators) → [rust-lang/rust#159268](https://github.com/rust-lang/rust/issues/159268)
 
 ---
 
