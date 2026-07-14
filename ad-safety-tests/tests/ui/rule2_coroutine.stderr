@@ -1,0 +1,17 @@
+--> $WORKSPACE/tests/ui/rule2_coroutine.rs:8:4
+  |
+8 | fn f_inv...utine(x:...
+  |    ^^^^^...^^^^^
+  |
+
+error: use of coroutines/generators is not supported in differentiated functions
+ --> $WORKSPACE/tests/ui/rule2_coroutine.rs:9:9
+  |
+8 | fn f_...> f32 {
+  | -----...----- inside this differentiated function
+9 |     let mut coroutine = #[coroutine] mov...
+  |         ^^^^^^^^^^^^^
+  |
+  = note: differentiating through coroutine state machines silently ignores state mutation, leading to incorrect gradients (dx: 0)
+
+error: aborting due to 1 previous error; 1 warning emitted

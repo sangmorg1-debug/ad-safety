@@ -1,0 +1,23 @@
+--> $WORKSPACE/tests/ui/rule1_active_ref.rs:6:4
+  |
+6 | fn f_invalid<'a...
+  |    ^^^^^^^^^
+  |
+
+error: parameter 1 has type `&'a f32` but is marked as `Active` in reverse-mode autodiff
+ --> $WORKSPACE/tests/ui/rule1_active_ref.rs:5:1
+  |
+5 | #[aut...ive)]
+  | ^^^^^...^^^^^ differentiated here
+  |
+  = help: reference and pointer parameters must be marked as `Duplicated` (not `Active`) in reverse mode. Change the activity to `Duplicated` and pass a shadow parameter to receive the gradient in-place.
+
+error: parameter 2 has type `&'a f32` but is marked as `Active` in reverse-mode autodiff
+ --> $WORKSPACE/tests/ui/rule1_active_ref.rs:5:1
+  |
+5 | #[aut...ive)]
+  | ^^^^^...^^^^^ differentiated here
+  |
+  = help: reference and pointer parameters must be marked as `Duplicated` (not `Active`) in reverse mode. Change the activity to `Duplicated` and pass a shadow parameter to receive the gradient in-place.
+
+error: aborting due to 2 previous errors; 1 warning emitted

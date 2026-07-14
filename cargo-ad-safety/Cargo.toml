@@ -1,0 +1,7 @@
+[package]
+name = "cargo-ad-safety"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ad-safety-core = { path = "../ad-safety-core" }

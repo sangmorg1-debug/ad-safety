@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "ad-safety-core",
+    "cargo-ad-safety",
+    "ad-safety-tests",
+]
+resolver = "2"
